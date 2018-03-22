@@ -6,3 +6,4 @@ Restric Access -
 
 
 Homework: Do the same restrict access (controller) for delete
+rails s -b $IP -p $PORT
