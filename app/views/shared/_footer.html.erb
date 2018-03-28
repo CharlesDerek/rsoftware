@@ -1,0 +1,62 @@
+
+          <footer class="footer">
+        <div class="sec sec--navy">
+          <div class="cont">
+            <div class="w-row">
+              <div class="col w-col w-col-3 w-col-small-small-stack w-col-medium-6">
+                <div class="gap--med">
+                  <div class="gap--small">
+                   <h5 class="text-color--blue">Recovery Services</h5>
+                  </div>
+
+                  <a href="/about-us" class="link--footer">About Us</a>
+                  <a href="/contact-us" class="link--footer">Contact Us</a>
+                </div>
+              </div>
+              <div class="col w-col w-col-3 w-col-small-small-stack w-col-medium-6">
+                <div class="gap--med">
+                  <div class="gap--small">
+                    <h5 class="text-color--blue">Resources</h5>
+                  </div>
+                  <a href="/integrate-seamlessly" class="link--footer">Add-ons</a>
+                  <a href="/mobile-app" class="link--footer">Mobile app</a>
+                </div>
+              </div>
+              <div class="col w-col w-col-3 w-col-small-small-stack w-col-medium-6">
+                <div class="gap--med">
+                  <div class="gap--small">
+                    <h5 class="text-color--blue">For Our Clients</h5>
+                  </div>
+                  <% if user_signed_in? %>
+                    <p class="navbar-text">
+                      Signed in as <%= "#{current_user.email}" %>
+                    </p>
+                      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navlink-2 w-nav-link" %>
+                  <% end %>
+                  <a href="/accountants-bookkeepers" class="link--footer">Recovery Agency Client CMS</a>
+                  <a href="/small-medium-businesses" class="link--footer">Bank/Lenders Automated Invoicing</a>
+                </div>
+              </div>
+              <div class="col w-col w-col-3 w-col-small-small-stack w-col-medium-6">
+                <div class="box">
+                  <div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-legend">
+              <div class="col">
+                <div class="footer-logo">
+                  <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a555d2729f1720001df2b43_32icon.png" class="img--footer-logo"/>
+                </div>
+                <div class="text--center">
+                  <div class="copyright">© The Recovery Unit 2010 - 2018<br/>Application designed and developed by: <a href="http://mrgi.webflow.io/">MRGI Software Solutions</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </div>
+ 

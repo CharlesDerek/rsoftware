@@ -1,21 +1,648 @@
-<% if user_signed_in? %>
-  <%= link_to "New Article", new_article_path, class: "btn btn-default btn-lg", id: "new-article-btn" %>
-<% end %>
-<% if @articles.empty? %>
-  <h1 id="no-articles">No Articles Created</h1>
-<% else %>
-  <% @articles.each do |article| %>
-    <div class="well well-lg">
-      <div class="article-title">
-        <%= link_to article.title, article_path(article) %>
+<div data-ix="reduce-nav-bar-on-scroll" class="body-wrapper">
+  <section class="sec sec--hero" data-ix="fade-effect">
+      <div class="cont">
+        <div class="subsec">
+          <div class="col">
+            <div class="frame-container frame-container--hero">
+              <div class="frame frame--gradient">
+                <div class="frame-border--big">
+                  <div class="frame-mask--white"></div>
+                </div>
+              </div>
+            </div>
+            <div class="room--big">
+              <div class="hero--home">
+                <div class="hero--title">
+                  <div class="white">
+                    <div class="pos--relative">
+                      <h1>
+                        <em>Changing how recoveries are done.</em>
+                      </h1>
+                      <div class="gap--med">
+                        <p>The Recovery Unit automates recoveries by accurately capturing all of your invoices, Lien recoveries and statements into one accounting solution.</p>
+                      </div>
+                      <div class="gap--xsmall">
+                      <a href="/users/sign_up" data-ix="button-hover" class="buttonmobile w-hidden-main w-hidden-medium w-inline-block">
+                        <div class="button--move">
+                          <div class="button--ico-left">
+                            <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae17_%5Bautoentry%5Dbtn-arrow-white.svg" width="8"/>
+                          </div>
+                          <div class="button--text">Services</div>
+                          <div class="button--ico-right w-hidden-small w-hidden-tiny">
+                            <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae17_%5Bautoentry%5Dbtn-arrow-white.svg" width="8"/>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="/users/sign_up" data-ix="button-hover" class="buttonbig w-hidden-small w-hidden-tiny w-inline-block">
+                        <div class="button--move">
+                          <div class="button--ico-left">
+                            <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae17_%5Bautoentry%5Dbtn-arrow-white.svg" width="20" class="image-2"/>
+                          </div>
+                          <div class="button--textjumbo">
+                            <em>Sign Up</em>
+                          </div>
+                          <div class="button--ico-rightjumbo">
+                            <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae17_%5Bautoentry%5Dbtn-arrow-white.svg" width="25" class="image-5"/>
+                          </div>
+                        </div>
+                      </a>
+                      </div>
+                      <div class="gap--med">
+                        <div class="gap--xsmall">
+                        </div>
+                      </div>
+                    </div>
+                    <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a553146e519160001e50653_5a15d29e58352800010eae68_%5Bautoentry%5Dhero-laptop-min2.png" class="img--hero img-hero--laptop2" data-ix="slideimageintoscroll"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cont--medium" data-ix="fade-effect">
+          <div class="subsec">
+            <div class="gap--small">
+              <div class="text--center">
+                <h5>A trusted solution provider</h5>
+              </div>
+            </div>
+          <div class="w-row">
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+              <div class="company-logo--container">
+                <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae54_logo_deloitte%402x.png" class="company-logo"/>
+              </div>
+            </div>
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+              <div class="company-logo--container">
+                <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae56_logo_bdo%402x.png" class="company-logo"/>
+              </div>
+            </div>
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+              <div class="company-logo--container">
+               <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae79_sagars.png" class="company-logo company-logo--enlarge"/>
+              </div>
+            </div>
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+              <div class="company-logo--container">
+                <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae55_logo_pkf%402x.png" class="company-logo"/>
+              </div>
+            </div>
+          </div>
+          <div class="w-row">
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6 w-col-medium-3">
+              <div class="company-logo--container">
+                <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae78_logo_armstrong-watson%402x.png" class="company-logo company-logo--enlarge"/>
+              </div>
+            </div>
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6 w-col-medium-3">
+              <div class="company-logo--container">
+                <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eade5_Menzies%20logo.svg" class="company-logo"/>
+              </div>
+            </div>
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6 w-col-medium-3">
+              <div class="company-logo--container">
+                <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae76_logo_kingston-smith%402x.png" class="company-logo company-logo--enlarge"/>
+              </div>
+            </div>
+            <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6 w-col-medium-3">
+              <div class="company-logo--container">
+                <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadd8_Kreston_Reeves%20logo.png" class="company-logo"/>
+              </div>
+            </div>
+          </div>
+          </div>
+      <div class="col">
+        <div class="divider"></div>
       </div>
-      <div class="article-body">
-        <%= truncate(article.body, length: 500) %>
-      </div>
-      
-      <div class="author">
-        <small>Created by: <%= article.user.email %></small>
+        <div class="subsec">
+          <div class="gap--small">
+            <div class="text--center">
+              <h5>Our numbers</h5>
+            </div>
+          </div>
+          <ul class="grid">
+            <li class="grid--item grid--item-stats">
+              <p class="info-box">
+                <span class="stat-data">492</span>
+                <span xmlns="http://www.w3.org/1999/xhtml"> Banks</span>
+              </p>
+            </li>
+            <li class="grid--item grid--item-stats">
+              <p class="info-box">
+                <span class="stat-data">5,463</span> Agencies Using Us
+              </p>
+            </li>
+            <li class="grid--item grid--item-stats">
+              <p class="info-box">
+                <span class="stat-data">325,000 +</span> Transactions
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  <% end %>
-<% end %>
+  </section>
+  
+  
+    <div>
+    </div>
+    <div class="angle-container">
+      <div class="angle--top"></div>
+      <div class="angle-title">
+        <div class="jumbo" data-ix="fade-effect">Benefits</div>
+      </div>
+    </div>
+  
+  
+  <section class="sec sec--color">
+      <div class="cont">
+        <div class="subsec">
+          <ul class="grid" data-ix="fade-effect">
+            <li class="grid--item grid--item-fourth">
+              <div class="frame-container">
+                <div class="frame frame--navy">
+                  <div class="frame-border--small">
+                    <div class="frame-mask--light"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="room--medium">
+                <div class="gap--small">
+                  <div class="img--feature-container">
+                    <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadf0_%5Bautoentry%5Dico_save-time_gradient.svg" width="84" class="img--feature"/>
+                  </div>
+                </div>
+                <div class="displacement--right">
+                  <div class="blue--light">
+                    <div class="room--small">
+                      <h4>Save time</h4>
+                      <p>No more manually inputting invoices, receipts or invoices. Recovery Software extracts the invoice data you need and publishes to your Recovery Statuses.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid--item grid--item-fourth">
+              <div class="frame-container">
+                <div class="frame frame--navy">
+                  <div class="frame-border--small">
+                    <div class="frame-mask--light"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="room--medium">
+                <div class="gap--small">
+                  <div class="img--feature-container">
+                    <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadef_%5Bautoentry%5Dico_paperless_gradient.svg" class="img--feature"/>
+                  </div>
+                </div>
+                <div class="displacement--right">
+                  <div class="blue--light">
+                    <div class="room--small room--small-light">
+                      <h4>Paperless</h4>
+                      <p>With data stored securely in the cloud, there&#x27;s no need to store, file, print and copy paper documents anymore. This highly increases our productivity with our clients, and the recovery process.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid--item grid--item-fourth">
+              <div class="frame-container">
+                <div class="frame frame--navy">
+                  <div class="frame-border--small">
+                    <div class="frame-mask--light"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="room--medium">
+                <div class="gap--small">
+                  <div class="img--feature-container">
+                   <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadee_%5Bautoentry%5Dico_integrations_gradient.svg" class="img--feature"/>
+                  </div>
+                </div>
+                <div class="displacement--right">
+                  <div class="blue--light">
+                    <div class="room--small room--small-light">
+                    <h4>Integrations</h4>
+                    <p>Seamless automatic publishing of verified data from our drivers onto our your status dashboard as a lien holder.</p>
+                    <a data-ix="button-hover" href="/integrate-seamlessly" class="button button--open button--open--bright w-inline-block">
+                      <div class="button--move">
+                        <div class="button--ico-left">
+                          <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae12_%5Bautoentry%5Dbtn-arrow-crimson.svg" width="8"/>
+                        </div>
+                        <div class="button--text">See Integrations</div>
+                        <div class="button--ico-right">
+                          <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae12_%5Bautoentry%5Dbtn-arrow-crimson.svg" width="8"/>
+                        </div>
+                      </div>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid--item grid--item-fourth">
+              <div class="frame-container">
+                <div class="frame frame--navy">
+                  <div class="frame-border--small">
+                    <div class="frame-mask--light"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="room--medium">
+                <div class="gap--small">
+                  <div class="img--feature-container">
+                    <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadf1_%5Bautoentry%5Dico_mobile_gradient.svg" class="img--feature"/>
+                  </div>
+                </div>
+                <div class="displacement--right">
+                  <div class="blue--light">
+                    <div class="room--small room--small-light">
+                      <h4>Mobile App</h4>
+                      <p>Coming Soon..</p>
+                      <a data-ix="button-hover" href="/mobile-app" class="button button--open button--open--bright w-inline-block">
+                        <div class="button--move">
+                          <div class="button--ico-left">
+                            <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae12_%5Bautoentry%5Dbtn-arrow-crimson.svg" width="8"/>
+                          </div>
+                        <div class="button--text">the aPP</div>
+                          <div class="button--ico-right">
+                           <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae12_%5Bautoentry%5Dbtn-arrow-crimson.svg" width="8"/>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+          <div class="subsec">
+            <div class="col">
+              <div class="text--center">
+                <div class="center-correction" data-ix="fade-effect">
+                  <div class="gap--inline">
+                    <a href="/accountants-bookkeepers" data-ix="button-hover" class="button w-inline-block">
+                      <div class="button--move">
+                        <div class="button--ico-left">
+                          <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae17_%5Bautoentry%5Dbtn-arrow-white.svg" width="8"/>
+                        </div>
+                        <div class="button--text">Recovery</div>
+                        <div class="button--ico-right">
+                          <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae17_%5Bautoentry%5Dbtn-arrow-white.svg" width="8"/>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="gap--inline">
+                    <a href="/accountants-bookkeepers" data-ix="button-hover" class="button w-inline-block">
+                      <div class="button--move">
+                        <div class="button--ico-left">
+                          <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae17_%5Bautoentry%5Dbtn-arrow-white.svg" width="8"/>
+                        </div>
+                        <div class="button--text">sign in</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+        </div>
+  </section>
+  
+  
+  
+  
+  
+      <div>
+        <div class="angle-container">
+          <div class="angle--bottom"></div>
+          <div class="angle-title">
+            <div class="jumbo" data-ix="fade-effect">How it works</div>
+          </div>
+        </div>
+  <section class="sec">
+        <div class="cont">
+          <div class="subsec">
+            <ul class="grid" data-ix="fade-effect">
+              <li class="grid--item grid--item--gradient-boxes">
+                <div class="frame-container frame-container--advanced">
+                  <div class="frame frame--gradient">
+                    <div class="frame-border--small">
+                      <div class="frame-mask--white"></div>
+                    </div>
+                  </div>
+                  <div class="room--medium">
+                    <div class="displaced-header">
+                      <div class="white">
+                        <div class="room--small">
+                          <h3>
+                            <span class="title-info">01<br xmlns="http://www.w3.org/1999/xhtml"/></span>
+                            Capture and submit documents
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="displacement--advanced">
+                      <div class="gap--small">
+                        <p>Automate email invoices, keep booking files on reposessions, and easy access.</p>
+                      </div>
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae3c_%5Bautoentry%5Dicons_submit.svg" class="img--illustration"/>
+                    </div>
+                  </div>
+              </li>
+              <li class="grid--item grid--item--gradient-boxes">
+                <div class="frame-container frame-container--advanced">
+                  <div class="frame frame--gradient">
+                    <div class="frame-border--small">
+                      <div class="frame-mask--white"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="room--medium">
+                  <div class="displaced-header">
+                    <div class="white">
+                      <div class="room--small">
+                        <h3>
+                          <span class="title-info">02<br xmlns="http://www.w3.org/1999/xhtml"/></span>
+                          Accurate, automated data extraction
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="displacement--advanced">
+                    <div class="gap--small">
+                     <p>Our API Networks provide Innovate accurate answers to logistics for drivers. While saving all files on our database effortlessly.</p>
+                    </div>
+                    <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae3d_%5Bautoentry%5Dicons_verify.svg" class="img--illustration"/>
+                  </div>
+                </div>
+              </li>
+              <li class="grid--item grid--item--gradient-boxes">
+                <div class="frame-container frame-container--advanced">
+                  <div class="frame frame--gradient">
+                    <div class="frame-border--small">
+                      <div class="frame-mask--white"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="room--medium">
+                  <div class="displaced-header">
+                    <div class="white">
+                      <div class="room--small">
+                        <h3>
+                          <span class="title-info">03
+                            <br xmlns="http://www.w3.org/1999/xhtml"/>
+                          </span>
+                          Seamless integrations
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="displacement--advanced">
+                    <div class="gap--small">
+                      <p>Our Software ensures the simplest possible publishing to the widest range of cloud and desktop accountancy packages such as Xero.</p>
+                    </div>
+                    <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae3e_%5Bautoentry%5Dicons_ntegration.svg" class="img--illustration"/>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="subsec">
+            <div class="col">
+              <div class="text--center" data-ix="fade-effect"></div>
+            </div>
+          </div>
+        </div>
+  </section>
+      </div>
+      <div class="angle-container">
+        <div class="angle--top"></div>
+        <div class="angle-title">
+          <div class="jumbo" data-ix="fade-effect">Testimonials</div>
+        </div>
+      </div>
+      <div class="cont">
+        <div class="cont--medium">
+          <div class="col">
+            <div class="subsec">
+              <div data-animation="slide" data-duration="500" data-infinite="1" class="slider w-slider">
+                <div class="w-slider-mask">
+                  <div class="slide w-slide">
+                    <div class="gap--med">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadf2_%5Bautoentry%5Dico_quote_gradient.svg"/>
+                    </div>
+                    <div class="gap--med">
+                      <blockquote>The quality of the software is exceptional and critically, the platform can flex to accommodate fluctuating 
+                      workloads without compromising on speed, or quality of the data yielded.</blockquote>
+                      <div>
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae07_%5Bautoentry%5Drating_5.svg"/>
+                      </div>
+                    </div>
+                    <div class="testimonial-profile">
+                      <div class="vertical-alignment--middle">
+                        <div class="gap--inline">
+                          <div class="person-info">
+                            <span class="text--emphasis">
+                              Ruth Gibson<br/>
+                            </span>
+                            Alpha Hooks Inc.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide w-slide">
+                    <div class="gap--med">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadf2_%5Bautoentry%5Dico_quote_gradient.svg"/>
+                    </div>
+                    <div class="gap--med">
+                      <blockquote>Delivered at reasonable rates, and with an excellent customer service team, RepoCount is frankly the only solution businesses should consider when looking to automate bookkeeping data entry.</blockquote>
+                      <div>
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae07_%5Bautoentry%5Drating_5.svg"/>
+                      </div>
+                    </div>
+                    <div class="vertical-alignment--middle">
+                      <div class="gap--inline">
+                        <div>
+                          <span class="text--emphasis">Israel  Stokes<br/>
+                          </span>
+                          LuckyFinn Accountants
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide w-slide">
+                    <div class="gap--med">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae1c_%5Bautoentry%5Dico_quote_gradient%402x.svg"/>
+                    </div>
+                    <div class="gap--med">
+                      <blockquote>We’re very impressed with RepoCount and the efficiencies it has generated so far, including<br/>
+                      time savings upwards of 50%. RepoCount will remain a core component of our ongoing digital strategy, automating data entry and enabling us to take on more new business with the additional capacity.</blockquote>
+                      <div>
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae07_%5Bautoentry%5Drating_5.svg"/>
+                      </div>
+                    </div>
+                    <div class="vertical-alignment--middle">
+                      <div class="gap--inline">
+                      <div>
+                        <span class="text--emphasis">Blake  Thornton<br/>
+                        </span>
+                      The WhiteFish Corp
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide w-slide">
+                    <div class="gap--med">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae1c_%5Bautoentry%5Dico_quote_gradient%402x.svg"/>
+                    </div>
+                    <div class="gap--med">
+                      <blockquote>RepoCount has become a key resource for Sagars and is a crucial component of our ongoing digital strategy. It’s provided us with the required automated intelligence to expand our bookkeeping services and gain a competitive edge. Our team and clients have adapted quickly to the solution and we’ve see major productivity gains.
+                      </blockquote>
+                      <div>
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae07_%5Bautoentry%5Drating_5.svg"/>
+                      </div>
+                    </div>
+                    <div class="vertical-alignment--middle">
+                      <div class="gap--inline">
+                        <div>
+                          <span class="text--emphasis">Peter  Bowen<br/>
+                          </span>
+                          TrueTrend Investments
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide w-slide">
+                    <div class="gap--med">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae1c_%5Bautoentry%5Dico_quote_gradient%402x.svg"/>
+                    </div>
+                    <div class="gap--med">
+                      <blockquote>RepoCount has transformed our back office operations whilst providing us with the<br/>
+                      technological agility needed to scale our practice. We’re delighted with the efficiencies <br/>
+                      generated so far, including time savings of approximately 50% by eliminating manual<br/>
+                      data entry.</blockquote>
+                      <div>
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae07_%5Bautoentry%5Drating_5.svg"/>
+                      </div>
+                    </div>
+                    <div class="vertical-alignment--middle">
+                      <div class="gap--inline">
+                        <div>
+                          <span class="text--emphasis">Jessie Medina<br/>
+                          </span>
+                          SpeedyRecoveries LLC
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide w-slide">
+                    <div class="gap--med">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae1c_%5Bautoentry%5Dico_quote_gradient%402x.svg"/>
+                    </div>
+                    <div class="gap--med">
+                      <blockquote>As a bookkeeping customer service agency, we&#x27;re really pleased to have discovered RepoCount. It&#x27;s so flexible, being able to process both accounts and payment transactions and to also turn pdf bank statements into csv files that will integrate with Xero bank feed lines. It&#x27;s particularly good being able to spread the credits across multiple companies.</blockquote>
+                      <div>
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae07_%5Bautoentry%5Drating_5.svg"/>
+                      </div>
+                    </div>
+                    <div class="vertical-alignment--middle">
+                      <div class="gap--inline">
+                        <div>
+                          <span class="text--emphasis">Annie  Glover<br/>
+                          </span>
+                          CloudTrust
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ico--slider w-slider-arrow-left">
+                  <div class="w-icon-slider-left">
+                  </div>
+                </div>
+                <div class="ico--slider w-slider-arrow-right">
+                  <div class="w-icon-slider-right">
+                  </div>
+                </div>
+                <div class="slidenav w-slider-nav w-round">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section">
+        <div class="w-hidden-main w-hidden-medium w-hidden-small w-hidden-tiny">
+          <div class="angle-container">
+            <div class="angle--top">
+            </div>
+            <div class="angle-title">
+              <h3>As seen in</h3>
+            </div>
+          </div>
+          <section class="sec sec--reduced sec--color">
+            <div class="cont cont--reduced">
+              <div class="cont--medium">
+                <div class="w-row">
+                  <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                    <div class="company-logo--container">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae43_logo_irish-times%402x.png" width="197" class="company-logo"/>
+                    </div>
+                  </div>
+                  <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                    <div class="company-logo--container">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadfd_logo_finance%402x.png" class="company-logo"/>
+                    </div>
+                  </div>
+                  <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                    <div class="company-logo--container">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae42_logo_accounting-web%402x.png" class="company-logo"/>
+                    </div>
+                  </div>
+                  <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                    <div class="company-logo--container">
+                      <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae44_logo_business-post%402x.png" class="company-logo"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="subsec subsec--reduced">
+                  <div class="w-row">
+                    <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                      <div class="company-logo--container">
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eaddb_logo_irish-examiner%402x.png" width="197" class="company-logo"/>
+                      </div>
+                    </div>
+                    <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                      <div class="company-logo--container">
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eadda_logo_accountacy-age%402x.png" class="company-logo"/>
+                      </div>
+                    </div>
+                    <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                      <div class="company-logo--container">
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eaddd_logo_bookkeepers-alliance%402x.png" class="company-logo"/>
+                      </div>
+                    </div>
+                    <div class="col w-col w-col-3 w-col-small-6 w-col-tiny-6">
+                      <div class="company-logo--container">
+                        <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eaddc_logo_business-finance%402x.png" class="company-logo"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </div>
+      <div class="angle-container">
+      </div>
+</div>
+
+
+
+<%= render 'shared/footer' %>

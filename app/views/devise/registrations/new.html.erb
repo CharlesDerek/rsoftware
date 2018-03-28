@@ -1,53 +1,113 @@
-<h2 class='text-center'>Sign up</h2>
-<div class='row'>
-  <div class='col-md-12'>
+	<div data-ix="reduce-nav-bar-on-scroll" class="body-wrapper">
+		<div class="sec sec--hero">
+			<div class="cont">
+				<div class="cont--small">
+					<div class="text--center">
+						<div class="angle-container angle-container--form">
+							<div class="angle--top">
+							</div>
+						</div>
+						<div class="form-container">
+							<div class="gap--big">
+								<h1 class="h1--form">Ready to grow exponentially? Get a membership quote below!</h1>
+							</div>
+							<div class="w-form" data-ix="fade-effect">
+								<%= form_for(resource, as: resource_name, :html => {class: "form", role: "form"},
+        								url: registration_path(resource_name)) do |f| %>
+      									<%= devise_error_messages! %>
+									<div class="w-row">
+										<div class="col w-col w-col-6">
+											<div class="gap--med">
+												<label for="firstname" class="field-label">First name <span class="field-label--required"></span>
+												</label>
+												<input type="text" class="input--text w-input" maxlength="256" autofocus="false" name="firstname" data-name="firstname" id="firstname"/>
+											</div>
+											<div class="gap--med">
+												<label for="lastname" class="field-label">Last name <span class="field-label--required"></span>
+												</label>
+												<input type="text" id="lastname" name="lastname" data-name="lastname" maxlength="256" class="input--text w-input"/>
+											</div>
+											<div class="gap--med">
+												<label for="email" class="field-label">Work email <span class="field-label--required">(required)</span>
+												</label>
+          										<%= f.email_field :email, class: 'input--text w-input', placeholder: "work@email.com" %>
+											</div>
+											<div class="gap--med">
+												<label for="password" class="field-label">password <span class="field-label--required">(required)</span>
+												</label>
+     											<%= f.password_field :password, class: 'input--text w-input', placeholder: "**********", autocomplete: "off" %>
+     													<% if @minimum_password_length %>
+          														<em>(<%= @minimum_password_length %> characters minimum)</em>
+          												<% end %><br />
+											</div>
+											<div class="gap--med">
+												<label for="password" class="field-label">Confirm Password<span class="field-label--required">(required)</span>
+												</label>
+     											<%= f.password_field :password_confirmation, class: 'input--text w-input', placeholder: "**********", autocomplete: "off" %>
+											</div>
+										</div>
+										<div class="col w-col w-col-6">
+											<div class="gap--med">
+												<label for="firm" class="field-label">Practice / Firm name <span class="field-label--required"></span>
+												</label>
+												<input type="text" id="firm" name="firm" data-name="firm" maxlength="256" class="input--text w-input"/>
+											</div>
+											<div class="gap--med">
+												<label for="location-2" class="field-label">Company location <span class="field-label--required"></span>
+												</label>
+												<div class="input--text input--text-select">
+													<select id="location" name="location" data-name="location" class="input--select w-select">
+														<option value="">
+														</option>
+													</select>
+												</div>
+											</div>
+											<div class="gap--med">
+												<label for="phone" class="field-label">Phone number</label>
+												<input type="text" id="phone" name="phone" data-name="phone" maxlength="256" placeholder="+44 8080 808880" class="input--text w-input"/>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="form-error">
+											<div class="form-error--text">Error message.</div>
+										</div>
+									</div>
+									<textarea id="TextBox" name="TextBox" placeholder="Further describe why you&#x27;d like to use our services." maxlength="5000" data-name="TextBox" class="new-textbox w-input">
+									</textarea>
+									<div class="gap--small">
+										<div data-ix="button-hover" class="submit-container">
+											<input type="submit" value=" " data-wait="Please wait..." class="button button-submit w-button"/>
+											<div class="send-to-back">
+          										<%= f.submit "Sign up", class: "button w-inline-block" %>
+											</div>
+										</div>
+									</div>
+								<% end %>
+								<div class="w-form-done">
+									<div id="form-feedback">Thank you! Your submission has been received!</div>
+								</div>
+								<div class="w-form-fail">
+									<div>Oops! Something went wrong while submitting the form</div>
+								</div>
+							</div>
+							<p>Already have an account? 
+	        						<%= render "devise/shared/links", class: "link--inline link--inline_alernative" %>
+	        						.</p>
+						</div>
+						<div class="angle-container angle-container--form">
+							<div class="angle--bottom">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="angle-container">
+			<div class="angle--footer">
+			</div>
+		</div>
+	</div>
 
-    <%= form_for(resource, as: resource_name, :html => {class: "form-horizontal", role: "form"}, 
-        url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
 
-      <div class="form-group">
-        <div class='control-label col-md-3'>
-          <%= f.label :email %>
-        </div>
-        <div class="col-md-9">
-          <%= f.email_field :email, class: 'form-control', autofocus: true %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="control-label col-md-3">
-          <%= f.label :password %>
-        </div>
-        
-        <div class='col-md-9'>
-          <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class='control-label col-md-3'>
-          <%= f.label :password_confirmation %>
-        </div>
-        <div class="col-md-9">
-          <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-md-offset-3 col-md-9">
-          <%= f.submit "Sign up", class: "btn btn-primary btn-lg" %>
-        </div>
-      </div>
-    <% end %>
-
-    <div class='form-group'>
-      <div class='col-md-offset-3 col-md-9 sign-link'>
-        <%= render "devise/shared/links" %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'shared/footer' %>

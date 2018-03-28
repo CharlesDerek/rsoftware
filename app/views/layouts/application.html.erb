@@ -1,15 +1,73 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogApp</title>
+  <!-- Last Published: Fri Mar 02 2018 01:31:28 GMT+0000 (UTC) -->
+  <meta charset="utf-8"/>
+      <title>Automated Accounting Software</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    
+    <meta content="Automated data entry software. RSoftware captures, analyses and posts invoices for recoveries, receipts and statements into your accounting solution." name="description"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="https://uploads-ssl.webflow.com/5a15d29e58352800010ead96/css/recoveryunit.1338cb503.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">WebFont.load({  google: {    families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]  }});</script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript">
+    </script>
+    <![endif]-->
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <link href="https://daks2k3a4ib2z.cloudfront.net/5a15d29e58352800010ead96/5a555d2729f1720001df2b43_32icon.png" rel="shortcut icon" type="image/x-icon"/>
+    <link href="https://daks2k3a4ib2z.cloudfront.net/5a15d29e58352800010ead96/5a555df7151dee0001cd6200_256icon%20(1).png" rel="apple-touch-icon"/>
+      <style>
+
+      </style>
   </head>
 
   <body>
+
+      
+
     <%= render 'shared/header' %>
     <%= render 'shared/main' %>
-  </body>
+
+    
+  
+  <footer>
+    <section>
+
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" intergrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+  </script>
+  <script src="https://uploads-ssl.webflow.com/5a15d29e58352800010ead96/js/recoveryunit.9280832ea.js" type="text/javascript">
+  </script>
+  <!--[if lte IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js">
+  </script>
+  <![endif]-->
+  <script>
+    function addCountries(whereto) {
+    var countriesfile = "United Kingdom, Ireland, United States of America, Australia, New Zealand, South Africa, Canada, ——————————, Afghanistan, Albania, Algeria, Andorra, Angola, Antigua & Deps, Argentina, Armenia, Austria, Azerbaijan, Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia, Bosnia Herzegovina, Botswana, Brazil, Brunei, Bulgaria, Burkina, Burma, Burundi, Cambodia, Cameroon, Cape Verde, Central African Rep, Chad, Chile, People's Republic of China, Republic of China, Colombia, Comoros, Democratic Republic of the Congo, Republic of the Congo, Costa Rica, Croatia, Cuba, Cyprus, Czech Republic, Danzig, Denmark, Djibouti, Dominica, Dominican Republic, East Timor, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Ethiopia, Fiji, Finland, France, Gabon, Gaza Strip, The Gambia, Georgia, Germany, Ghana, Greece, Grenada, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Holy Roman Empire, Honduras, Hungary, Iceland, India, Indonesia, Iran, Iraq, Israel, Italy, Ivory Coast, Jamaica, Japan, Jonathanland, Jordan, Kazakhstan, Kenya, Kiribati, North Korea, South Korea, Kosovo, Kuwait, Kyrgyzstan, Laos, Latvia, Lebanon, Lesotho, Liberia, Libya, Liechtenstein, Lithuania, Luxembourg, Macedonia, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Marshall Islands, Mauritania, Mauritius, Mexico, Micronesia, Moldova, Monaco, Mongolia, Montenegro, Morocco, Mount Athos, Mozambique, Namibia, Nauru, Nepal, Newfoundland, Netherlands, Nicaragua, Niger, Nigeria, Norway, Oman, Ottoman Empire, Pakistan, Palau, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Poland, Portugal, Prussia, Qatar, Romania, Rome, Russian Federation, Rwanda, St Kitts & Nevis, St Lucia, Saint Vincent & the, Grenadines, Samoa, San Marino, Sao Tome & Principe, Saudi Arabia, Senegal, Serbia, Seychelles, Sierra Leone, Singapore, Slovakia, Slovenia, Solomon Islands, Somalia, Spain, Sri Lanka, Sudan, Suriname, Swaziland, Sweden, Switzerland, Syria, Tajikistan, Tanzania, Thailand, Togo, Tonga, Trinidad & Tobago, Tunisia, Turkey, Turkmenistan, Tuvalu, Uganda, Ukraine, United Arab Emirates, Uruguay, Uzbekistan, Vanuatu, Vatican City, Venezuela, Vietnam, Yemen, Zambia, Zimbabwe";
+    var countries = countriesfile.split(", ");
+    for(var c = 0; c<countries.length; c++) {
+      $(whereto).append('<option value="' + countries[c] + '">' + countries[c] + '</option>');
+      $(whereto).children().first().attr("disabled","disabled");
+      $(whereto).children().eq(8).attr("disabled","disabled");
+    }
+  }
+
+  Webflow.push(function() {
+    addCountries('#location');
+  });
+    
+    
+  </script>
+
+    </section>
+        </footer>
+</body>
 </html>
