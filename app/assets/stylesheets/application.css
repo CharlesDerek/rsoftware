@@ -17,14 +17,30 @@
                 textarea#TextBox {
                     border-radius: 20px!important;
                     }
+
                 
 @media screen and (min-width: 991px) {
   body.body {
     padding-top: 20vh;
   }
+  textarea#TextBox {
+    width: 25vw!important;
+  }
 }
 @media screen and (max-width: 990px) {
   body.body {
-    padding-top: 7vh;
+    padding-top: 12vh;
   }
+  textarea#TextBox {
+    width: 75vw!important;
+  }
+}
+@media screen and (max-width: 766px) {
+  textarea#TextBox {
+    width: 80vw!important;
+    margin: 5px;
+  }
+}
+well well-lg {
+  padding: 5px;
 }

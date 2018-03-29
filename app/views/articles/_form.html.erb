@@ -1,49 +1,64 @@
-<div class="row">
-  <div class="col-md-12">
-    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-      <% if @article.errors.any? %>
-        <div class="panel panel-danger col-md-offset-1">
-          <div class="panel-heading">
-            <h2 class="panel-title">
-              <%= pluralize(@article.errors.count, "error") %>
-              prohibited this article from being saved:
-            </h2>
-            
-            <div class="panel-body">
-              <ul>
-                <% @article.errors.full_messages.each do |msg| %>
-                <li>
-                  <%= msg %>
-                </li>
+  <div data-ix="reduce-nav-bar-on-scroll" class="body-wrapper">
+    <div class="sec sec--hero">
+      <div class="cont">
+        <div class="cont--small">
+          <div class="text--center">
+            <div class="angle-container angle-container--form">
+              <div class="angle--top">
+              </div>
+            </div>
+            <div class="form-container">
+              <div class="gap--big">
+                <h1 class="h1--form">Ready to grow exponentially? Get a membership quote below!</h1>
+              </div>
+              <div class="w-form" data-ix="fade-effect">
+                <%= form_for(@article, :html => {class: "form", role: "form"}) do |f| %>
+                    <% if @article.errors.any? %>
+                      <div class="panel panel-danger col-md-offset-1">
+                        <div class="panel-heading">
+                          <h2 class="panel-title">
+                            <%= pluralize(@article.errors.count, "error") %>
+                            prohibited this article from being saved:
+                          </h2>
+                          
+                          <div class="panel-body">
+                            <ul>
+                              <% @article.errors.full_messages.each do |msg| %>
+                              <li>
+                                <%= msg %>
+                              </li>
+                              <% end %>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  <div class="w-row">
+                    <div class="col w-col w-col-6">
+                      <div class="gap--med">
+                        <label for="title" class="field-label">Title <span class="field-label--required"></span>
+                        </label>
+                        <%= f.text_field :title, class: 'input--text w-input', placeholder: "Title of article", autofocus: false %>
+                      </div>
+                      <div class="gap--med">
+                        <%= f.text_area :body, id: "TextBox", rows: 20, class: 'new-textbox w-input', placeholder: 'Body of article' %>
+                      </div>
+                  <div class="gap--small">
+                    <div data-ix="button-hover" class="submit-container">
+                      <input type="submit" value=" " data-wait="Please wait..." class="button button-submit w-button"/>
+                      <div class="send-to-back">
+                        <%= f.submit class: 'button w-inline-block' %>
+                      </div>
+                    </div>
+                  </div>
                 <% end %>
-              </ul>
+              </div>
             </div>
           </div>
         </div>
-      <% end %>
-      <div class="form-group">
-        <div class="control-label col-md-1">
-          <%= f.label :title %>
-        </div>
-        <div class="col-md-11">
-          <%= f.text_field :title, class: 'form-control', placeholder: "Title of article", autofocus: true %>
-        </div>
       </div>
-      <div class="form-group">
-        <div class="control-label col-md-1">
-          <%= f.label :body %>
-        </div>
-        <div class="col-md-11">
-          <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: 'Body of article' %>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <div class="col-md-offset-1 col-md-11">
-          <%= f.submit class: 'btn btn-primary btn-lg pull-right' %>
-        </div>
-      </div>
-      
-    <% end %>
+    </div>
   </div>
-</div>
+
+
+<%= render 'shared/footer' %>

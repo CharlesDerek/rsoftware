@@ -1,4 +1,4 @@
-<div data-ix="reduce-nav-bar-on-scroll" class="body-wrapper">
+  <div data-ix="reduce-nav-bar-on-scroll" class="body-wrapper">
   <section class="sec sec--hero" data-ix="fade-effect">
       <div class="cont">
         <div class="subsec">
@@ -290,7 +290,7 @@
               </div>
             </div>
           </div>
-          <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+          <p class="paragraph">Sign up and submit a request form, to enjoy our automation for invoicing, billing, and other reposession agency needs. </p>
         </div>
   </section>
   
@@ -623,7 +623,37 @@
       <div class="angle-container">
       </div>
 </div>
-
+</div>
+<div class="cont">
+<% if user_signed_in? %>
+  <%= link_to "New Article", new_article_path, class: "button w-inline-block", id: "new-article-btn" %>
+      <div align="center">
+        <%= will_paginate %>
+      </div>
+  <% if @articles.empty? %>
+    <h1 id="no-articles">No Articles Created</h1>
+  <% else %>
+    <% @articles.each do |article| %>
+      <div class="well well-lg">
+        <div class="article-title">
+          <h4><%= link_to article.title, article_path(article) %></h4>
+          
+        </div>
+        <div class="article-body">
+          <%= truncate(article.body, length: 300) %>
+        </div>
+        
+        <div class="author">
+          <small>Created by: <%= article.user.email %></small>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>      
+      <div align="center">
+        <%= will_paginate %>
+      </div>
+</div>
 
 
 <%= render 'shared/footer' %>

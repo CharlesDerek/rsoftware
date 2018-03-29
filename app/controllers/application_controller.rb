@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
   
   def resource_not_found
   end
+
 end

@@ -20,16 +20,14 @@
           <a href="#" class="eye-container w-inline-block">
             <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae13_%5Bautoentry%5Dlogo.svg" class="eye"/>
           </a>
-            <%= link_to "Authors", "#", class: "navlink-2 w-nav-link" %>
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
+            <%= link_to "Articles", "/", class: "navlink-2 w-nav-link" %>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navlink-2 w-nav-link" %>
 
           <% else %>  
             <%= link_to "Sign up", new_user_registration_path, class: "navlink-2 w-nav-link" %></li>
             <%= link_to "Sign in", new_user_session_path, class: "navlink-2 w-nav-link" %>
           <% end %>
-          <a href="/integrate-seamlessly" class="navlink-2 w-nav-link">Integrations</a>
-          <a href="/mobile-app" class="navlink-2 w-nav-link">Mobile App</a>
             <div data-delay="0" class="dropdown-button w-dropdown">
               <div class="dropdown w-dropdown-toggle">
                 <div class="ico--dropdown w-hidden-main w-hidden-medium w-hidden-small w-hidden-tiny w-icon-dropdown-toggle">
@@ -78,8 +76,8 @@
           <a href="#" class="eye-container w-inline-block">
             <img src="http://uploads.webflow.com/5a15d29e58352800010ead96/5a15d29e58352800010eae13_%5Bautoentry%5Dlogo.svg" class="eye"/>
           </a>
-            <%= link_to "Authors", "#", class: "navlink-2 w-nav-link" %>
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
+            <%= link_to "Articles", "/", class: "navlink-2 w-nav-link" %>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navlink-2 w-nav-link" %>
 
           <% else %>  

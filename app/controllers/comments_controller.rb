@@ -20,6 +20,16 @@ class CommentsController < ApplicationController
     end
   end
   
+  
+  
+  def destroy
+    if @comment.destroy
+      flash[:success] = "comment has been deleted"
+      redirect_to article_path(@article)
+    end
+  end
+  
+  
   private
     def comment_params
       params.require(:comment).permit(:body)
