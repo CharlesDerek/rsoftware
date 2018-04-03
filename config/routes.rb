@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  get 'userdashboard/dashboard', to: 'userdashboard#dashboard'
+  get 'user/dashboard', to: 'user#dashboard'
 
   
   mount ActionCable.server => '/cable'
